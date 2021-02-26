@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/node10
+    steps:
+      - checkout
+      - run: npm install --save
+      - run: npm run test
+
+workflows:
+  build_and_test:
+    jobs:
+      - run_tests
+
