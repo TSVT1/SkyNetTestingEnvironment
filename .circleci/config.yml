@@ -10,7 +10,7 @@ jobs:
       - run: npm run test
 
 workflows:
-  build_and_test:
+  test:
     jobs:
       - run_tests
 
