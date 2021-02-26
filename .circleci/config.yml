@@ -1,9 +1,13 @@
 version: 2.1
-
+orbs:
+  estlint:
 jobs:
   run_tests:
     docker:
-      - image: circleci/node10
+      - image: circleci/node1.1
+      auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: npm install --save
