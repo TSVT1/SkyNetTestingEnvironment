@@ -7,13 +7,16 @@ jobs:
 
   run_tests:
     docker:
-        - image: circleci/node:current
-      # - image: cimg/ruby:2.7.1-node
+      - image: cimg/ruby:2.7.1-node
 
     steps:
       - checkout
       - run: npm install --save
       - run: npm run test
+      - store_test_results:
+        path: coverage
+      - store_artifacts:
+        path: coverage
 
 workflows:
   lint_and_test:
