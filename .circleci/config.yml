@@ -21,7 +21,7 @@ jobs:
       - checkout
       - run: npm install --save
       - run: npm run test
-      - eslint
+      - eslint/run
 
 workflows:
   test:
