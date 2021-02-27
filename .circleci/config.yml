@@ -11,6 +11,8 @@ jobs:
       - run: npm run test
       - store_test_results:
           path: test-results
+      - store_artifacts:
+          path: test-results/jest/results.xml
 workflows:
   test:
     jobs:
