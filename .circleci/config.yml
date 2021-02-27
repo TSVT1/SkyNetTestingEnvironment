@@ -4,6 +4,15 @@ orbs:
   eslint: arrai/eslint@2.0.1
 
 jobs:
+  lint:
+    docker:
+      - image: cimg/ruby:2.7.1-node
+
+    steps:
+      - checkout
+      - run: npm install eslint
+      - run: eslint
+
   run_tests:
     docker:
       - image: cimg/ruby:2.7.1-node
@@ -12,10 +21,13 @@ jobs:
       - checkout
       - run: npm install --save
       - run: npm run test
-      - eslint/run
+      - eslint
 
 workflows:
   test:
     jobs:
       - run_tests
+  lint:
+    jobs:
+      - lint
 
