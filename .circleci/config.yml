@@ -5,18 +5,19 @@ orbs:
 
 jobs:
 
-  lint_and_test:
+  run_tests:
     docker:
       - image: cimg/ruby:2.7.1-node
 
     steps:
       - checkout
       - run: npm install --save
-      - run: npm run lint
+      - run: npm run test
 
 workflows:
   lint_and_test:
     jobs:
       - lint_and_test
+      - eslint/eslint
 
 

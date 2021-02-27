@@ -4,8 +4,7 @@
   "description": "",
   "main": "sum.js",
   "scripts": {
-    "test": "jest --collectCoverage",
-    "lint": "eslint . "
+    "test": "jest --collectCoverage"
   },
   "keywords": [],
   "author": "Hack Reactor <curriculum.team@hackreactor.com>",
