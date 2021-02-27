@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  eslint: arrai/eslint@2.0.1
+
 jobs:
   run_tests:
     docker:
@@ -9,10 +12,7 @@ jobs:
       - checkout
       - run: npm install --save
       - run: npm run test
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results/jest/results.xml
+      - run: eslint
 
 workflows:
   test:
