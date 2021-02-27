@@ -16,7 +16,7 @@ jobs:
 workflows:
   lint_and_test:
     jobs:
-      - eslint/run
+      - eslint
       - run_tests
 
 
