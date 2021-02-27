@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: npm install --save
       - run: npm run test
-      - run: eslint
+      - eslint/run
 
 workflows:
   test:
