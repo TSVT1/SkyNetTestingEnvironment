@@ -4,9 +4,6 @@ jobs:
   run_tests:
     docker:
       - image: cimg/ruby:2.7.1-node
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD
 
     steps:
       - checkout
